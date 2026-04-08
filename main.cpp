@@ -133,3 +133,30 @@ public:
         cout << "Highest Paid: " << highest->getName() << " ($" << highest->calculateNetPay() << ")" << endl;
     }
 };
+
+int main() {
+    PayrollSystem ps;
+    int choice;
+
+    do {
+        cout << "\n===== PAYROLL MENU =====\n";
+        cout << "1. Add Employee\n";
+        cout << "2. Update OT\n";
+        cout << "3. Generate Payslip\n";
+        cout << "4. Show Report\n";
+        cout << "0. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1: ps.addEmployee(); break;
+            case 2: ps.updateOT(); break;
+            case 3: ps.generatePayslip(); break;
+            case 4: ps.showReports(); break;
+            case 0: cout << "Exiting...\n"; break;
+            default: cout << "Invalid choice.\n";
+        }
+    } while (choice != 0);
+
+    return 0;
+}
