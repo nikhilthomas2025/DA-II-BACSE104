@@ -146,7 +146,12 @@ int main() {
         cout << "4. Show Report\n";
         cout << "0. Exit\n";
         cout << "Enter choice: ";
-        cin >> choice;
+        if (!(cin >> choice)) {
+        cout << "Invalid input! Please enter a number." << endl;
+        cin.clear(); // Clear error flags
+        cin.ignore(1000, '\n'); // Discard buffer
+    continue;
+}
 
         switch (choice) {
             case 1: ps.addEmployee(); break;
